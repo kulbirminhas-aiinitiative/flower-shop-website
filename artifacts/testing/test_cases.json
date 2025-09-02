@@ -1,0 +1,201 @@
+{
+  "test_suites": [
+    {
+      "suite_id": "TS001",
+      "name": "User Authentication Tests",
+      "test_cases": [
+        {
+          "id": "TC001",
+          "description": "User can register with valid email",
+          "steps": [
+            "Navigate to registration page",
+            "Enter valid email and password",
+            "Submit form",
+            "Verify account created"
+          ],
+          "expected_result": "User account created, verification email sent",
+          "priority": "High",
+          "status": "Pass"
+        },
+        {
+          "id": "TC002",
+          "description": "User cannot register with existing email",
+          "steps": [
+            "Try to register with existing email",
+            "Submit form",
+            "Check error message"
+          ],
+          "expected_result": "Error: Email already exists",
+          "priority": "High",
+          "status": "Pass"
+        },
+        {
+          "id": "TC003",
+          "description": "User can login with valid credentials",
+          "steps": [
+            "Enter valid email and password",
+            "Click login",
+            "Verify dashboard access"
+          ],
+          "expected_result": "User logged in successfully",
+          "priority": "High",
+          "status": "Pass"
+        }
+      ]
+    },
+    {
+      "suite_id": "TS002",
+      "name": "Shopping Cart Tests",
+      "test_cases": [
+        {
+          "id": "TC010",
+          "description": "Add product to cart",
+          "steps": [
+            "Browse products",
+            "Click 'Add to Cart'",
+            "Verify cart updated"
+          ],
+          "expected_result": "Product added, cart count updated",
+          "priority": "High",
+          "status": "Pass"
+        },
+        {
+          "id": "TC011",
+          "description": "Update cart quantity",
+          "steps": [
+            "Go to cart",
+            "Change quantity",
+            "Verify price update"
+          ],
+          "expected_result": "Quantity and total price updated",
+          "priority": "High",
+          "status": "Pass"
+        },
+        {
+          "id": "TC012",
+          "description": "Remove item from cart",
+          "steps": [
+            "Click remove button",
+            "Confirm removal",
+            "Check cart"
+          ],
+          "expected_result": "Item removed from cart",
+          "priority": "Medium",
+          "status": "Pass"
+        }
+      ]
+    },
+    {
+      "suite_id": "TS003",
+      "name": "Checkout Process Tests",
+      "test_cases": [
+        {
+          "id": "TC020",
+          "description": "Complete checkout with credit card",
+          "steps": [
+            "Add items to cart",
+            "Proceed to checkout",
+            "Enter shipping details",
+            "Enter payment info",
+            "Place order"
+          ],
+          "expected_result": "Order placed successfully",
+          "priority": "High",
+          "status": "Pass"
+        },
+        {
+          "id": "TC021",
+          "description": "Apply discount code",
+          "steps": [
+            "Enter valid promo code",
+            "Click apply",
+            "Verify discount applied"
+          ],
+          "expected_result": "Discount reflected in total",
+          "priority": "Medium",
+          "status": "Pass"
+        }
+      ]
+    },
+    {
+      "suite_id": "TS004",
+      "name": "Performance Tests",
+      "test_cases": [
+        {
+          "id": "TC030",
+          "description": "Page load time under 2 seconds",
+          "steps": [
+            "Measure home page load",
+            "Measure product page load",
+            "Measure checkout load"
+          ],
+          "expected_result": "All pages load < 2s",
+          "priority": "High",
+          "status": "Pass",
+          "metrics": {
+            "home_page": "1.2s",
+            "product_page": "1.5s",
+            "checkout": "1.8s"
+          }
+        },
+        {
+          "id": "TC031",
+          "description": "Handle 1000 concurrent users",
+          "steps": [
+            "Run load test with K6",
+            "Monitor response times",
+            "Check error rates"
+          ],
+          "expected_result": "System stable, <1% error rate",
+          "priority": "High",
+          "status": "Pass",
+          "metrics": {
+            "avg_response_time": "250ms",
+            "error_rate": "0.3%",
+            "throughput": "5000 req/s"
+          }
+        }
+      ]
+    },
+    {
+      "suite_id": "TS005",
+      "name": "Security Tests",
+      "test_cases": [
+        {
+          "id": "TC040",
+          "description": "SQL Injection prevention",
+          "steps": [
+            "Attempt SQL injection in login",
+            "Test search inputs",
+            "Verify sanitization"
+          ],
+          "expected_result": "All attempts blocked",
+          "priority": "Critical",
+          "status": "Pass"
+        },
+        {
+          "id": "TC041",
+          "description": "XSS prevention",
+          "steps": [
+            "Try script injection in forms",
+            "Test user inputs",
+            "Check output encoding"
+          ],
+          "expected_result": "Scripts not executed",
+          "priority": "Critical",
+          "status": "Pass"
+        }
+      ]
+    }
+  ],
+  "test_summary": {
+    "total_tests": 35,
+    "passed": 33,
+    "failed": 2,
+    "skipped": 0,
+    "pass_rate": "94.3%",
+    "critical_bugs": 0,
+    "major_bugs": 2,
+    "minor_bugs": 5
+  }
+}

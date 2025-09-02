@@ -1,0 +1,29 @@
+{
+  "project_id": "flower_shop_0003",
+  "name": "Flower Shop Website",
+  "type": "e-commerce",
+  "status": "active",
+  "created_date": "2025-09-02",
+  "methodology": "devops",
+  "orchestration_model": "hybrid",
+  "workflow": "devops_workflow",
+  "team_structure": "cross_functional",
+  "phases": [
+    "requirements",
+    "design",
+    "development",
+    "testing",
+    "deployment"
+  ],
+  "technology_stack": {
+    "frontend": ["React", "TypeScript", "TailwindCSS"],
+    "backend": ["Node.js", "Express", "PostgreSQL"],
+    "infrastructure": ["Docker", "GitHub Actions", "AWS"],
+    "monitoring": ["Prometheus", "Grafana"]
+  },
+  "constraints": {
+    "timeline": "8 weeks",
+    "budget": "$50,000",
+    "team_size": 5
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "design_system": {
+    "colors": {
+      "primary": "#E91E63",
+      "secondary": "#4CAF50",
+      "accent": "#FFC107",
+      "neutral": {
+        "50": "#FAFAFA",
+        "100": "#F5F5F5",
+        "200": "#EEEEEE",
+        "300": "#E0E0E0",
+        "400": "#BDBDBD",
+        "500": "#9E9E9E",
+        "600": "#757575",
+        "700": "#616161",
+        "800": "#424242",
+        "900": "#212121"
+      },
+      "semantic": {
+        "success": "#4CAF50",
+        "warning": "#FF9800",
+        "error": "#F44336",
+        "info": "#2196F3"
+      }
+    },
+    "typography": {
+      "font_family": {
+        "heading": "Playfair Display",
+        "body": "Open Sans",
+        "mono": "Roboto Mono"
+      },
+      "sizes": {
+        "xs": "12px",
+        "sm": "14px",
+        "base": "16px",
+        "lg": "18px",
+        "xl": "20px",
+        "2xl": "24px",
+        "3xl": "30px",
+        "4xl": "36px"
+      }
+    },
+    "spacing": {
+      "unit": "4px",
+      "scale": [0, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64, 80, 96]
+    },
+    "breakpoints": {
+      "mobile": "320px",
+      "tablet": "768px",
+      "desktop": "1024px",
+      "wide": "1440px"
+    }
+  },
+  "pages": {
+    "home": {
+      "sections": [
+        {
+          "name": "Hero",
+          "components": ["HeroSlider", "SearchBar", "QuickCategories"]
+        },
+        {
+          "name": "Featured Products",
+          "components": ["ProductGrid", "FilterBar"]
+        },
+        {
+          "name": "Occasions",
+          "components": ["OccasionCards"]
+        },
+        {
+          "name": "Testimonials",
+          "components": ["ReviewCarousel"]
+        }
+      ]
+    },
+    "product_listing": {
+      "layout": "Sidebar + Grid",
+      "components": ["FilterSidebar", "ProductGrid", "Pagination", "SortDropdown"]
+    },
+    "product_detail": {
+      "sections": [
+        {
+          "name": "Product Info",
+          "components": ["ImageGallery", "ProductDetails", "AddToCart", "DeliveryOptions"]
+        },
+        {
+          "name": "Customization",
+          "components": ["FlowerSelector", "VaseOptions", "CardMessage"]
+        },
+        {
+          "name": "Reviews",
+          "components": ["RatingsSummary", "ReviewList"]
+        }
+      ]
+    },
+    "cart": {
+      "layout": "Two Column",
+      "components": ["CartItems", "OrderSummary", "PromoCode", "CheckoutButton"]
+    },
+    "checkout": {
+      "steps": [
+        "Delivery Information",
+        "Delivery Date & Time",
+        "Payment Method",
+        "Review & Confirm"
+      ],
+      "components": ["StepIndicator", "FormSections", "OrderReview"]
+    }
+  },
+  "components": {
+    "common": [
+      "Header",
+      "Navigation",
+      "Footer",
+      "Button",
+      "Input",
+      "Select",
+      "Modal",
+      "Toast",
+      "Loader",
+      "Breadcrumb"
+    ],
+    "product": [
+      "ProductCard",
+      "ProductGrid",
+      "ProductCarousel",
+      "PriceDisplay",
+      "QuantitySelector",
+      "WishlistButton"
+    ],
+    "cart": [
+      "CartItem",
+      "CartSummary",
+      "EmptyCart"
+    ],
+    "user": [
+      "LoginForm",
+      "RegisterForm",
+      "ProfileCard",
+      "OrderHistory"
+    ]
+  },
+  "interactions": {
+    "animations": {
+      "page_transition": "fade",
+      "hover_effects": "scale",
+      "loading": "skeleton",
+      "notifications": "slide"
+    },
+    "micro_interactions": [
+      "Button ripple effect",
+      "Form field focus states",
+      "Cart update animation",
+      "Wishlist heart animation"
+    ]
+  },
+  "accessibility": {
+    "aria_labels": true,
+    "keyboard_navigation": true,
+    "screen_reader_support": true,
+    "color_contrast": "WCAG AA",
+    "focus_indicators": true
+  }
+}

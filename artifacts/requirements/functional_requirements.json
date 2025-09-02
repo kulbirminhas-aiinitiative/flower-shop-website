@@ -1,0 +1,234 @@
+{
+  "functional_requirements": [
+    {
+      "id": "FR001",
+      "category": "User Management",
+      "description": "User registration with email/social login",
+      "priority": "Must Have",
+      "acceptance_criteria": [
+        "Users can register with email and password",
+        "Social login via Google and Facebook",
+        "Email verification required",
+        "Password reset functionality"
+      ]
+    },
+    {
+      "id": "FR002",
+      "category": "Product Catalog",
+      "description": "Browse and search flower arrangements",
+      "priority": "Must Have",
+      "acceptance_criteria": [
+        "Display products in grid/list view",
+        "Filter by category, price, occasion",
+        "Search by name or description",
+        "Product detail pages with images"
+      ]
+    },
+    {
+      "id": "FR003",
+      "category": "Shopping Cart",
+      "description": "Add products to cart and manage quantities",
+      "priority": "Must Have",
+      "acceptance_criteria": [
+        "Add/remove items from cart",
+        "Update quantities",
+        "Persist cart across sessions",
+        "Apply discount codes"
+      ]
+    },
+    {
+      "id": "FR004",
+      "category": "Checkout",
+      "description": "Secure checkout process",
+      "priority": "Must Have",
+      "acceptance_criteria": [
+        "Guest checkout option",
+        "Multiple payment methods (card, PayPal)",
+        "Delivery date selection",
+        "Special delivery instructions"
+      ]
+    },
+    {
+      "id": "FR005",
+      "category": "Order Management",
+      "description": "Track and manage orders",
+      "priority": "Must Have",
+      "acceptance_criteria": [
+        "Order confirmation emails",
+        "Real-time order tracking",
+        "Order history for users",
+        "Cancel/modify orders within 2 hours"
+      ]
+    },
+    {
+      "id": "FR006",
+      "category": "Customization",
+      "description": "Custom bouquet builder",
+      "priority": "Should Have",
+      "acceptance_criteria": [
+        "Select flowers by type",
+        "Choose vase and wrapping",
+        "Add personalized message",
+        "Preview custom arrangement"
+      ]
+    },
+    {
+      "id": "FR007",
+      "category": "Subscription",
+      "description": "Flower subscription service",
+      "priority": "Should Have",
+      "acceptance_criteria": [
+        "Weekly/monthly delivery options",
+        "Manage subscription preferences",
+        "Pause/resume subscriptions",
+        "Subscription discounts"
+      ]
+    },
+    {
+      "id": "FR008",
+      "category": "Reviews",
+      "description": "Product reviews and ratings",
+      "priority": "Should Have",
+      "acceptance_criteria": [
+        "5-star rating system",
+        "Written reviews with photos",
+        "Verified purchase badge",
+        "Helpful votes"
+      ]
+    },
+    {
+      "id": "FR009",
+      "category": "Admin Dashboard",
+      "description": "Manage products and orders",
+      "priority": "Must Have",
+      "acceptance_criteria": [
+        "Product CRUD operations",
+        "Order status management",
+        "Inventory tracking",
+        "Sales analytics"
+      ]
+    },
+    {
+      "id": "FR010",
+      "category": "Notifications",
+      "description": "Email and SMS notifications",
+      "priority": "Must Have",
+      "acceptance_criteria": [
+        "Order confirmation",
+        "Delivery updates",
+        "Promotional emails",
+        "SMS delivery alerts"
+      ]
+    },
+    {
+      "id": "FR011",
+      "category": "Wishlist",
+      "description": "Save products for later",
+      "priority": "Could Have",
+      "acceptance_criteria": [
+        "Add/remove from wishlist",
+        "Share wishlist",
+        "Price drop alerts",
+        "Move to cart"
+      ]
+    },
+    {
+      "id": "FR012",
+      "category": "Gift Options",
+      "description": "Gift wrapping and messages",
+      "priority": "Should Have",
+      "acceptance_criteria": [
+        "Gift message cards",
+        "Premium wrapping options",
+        "Schedule delivery date",
+        "Anonymous sender option"
+      ]
+    },
+    {
+      "id": "FR013",
+      "category": "Loyalty Program",
+      "description": "Rewards and points system",
+      "priority": "Could Have",
+      "acceptance_criteria": [
+        "Earn points per purchase",
+        "Redeem points for discounts",
+        "Tier-based benefits",
+        "Birthday rewards"
+      ]
+    },
+    {
+      "id": "FR014",
+      "category": "Live Chat",
+      "description": "Customer support chat",
+      "priority": "Should Have",
+      "acceptance_criteria": [
+        "Real-time chat widget",
+        "Chatbot for FAQs",
+        "Human agent escalation",
+        "Chat history"
+      ]
+    },
+    {
+      "id": "FR015",
+      "category": "Store Locator",
+      "description": "Find physical store locations",
+      "priority": "Could Have",
+      "acceptance_criteria": [
+        "Map integration",
+        "Search by zip code",
+        "Store hours and contact",
+        "Directions"
+      ]
+    }
+  ],
+  "non_functional_requirements": [
+    {
+      "id": "NFR001",
+      "category": "Performance",
+      "description": "Page load time under 2 seconds",
+      "metric": "<2s for 95th percentile"
+    },
+    {
+      "id": "NFR002",
+      "category": "Scalability",
+      "description": "Handle 10,000 concurrent users",
+      "metric": "10K users without degradation"
+    },
+    {
+      "id": "NFR003",
+      "category": "Security",
+      "description": "PCI DSS compliance for payments",
+      "metric": "Pass security audit"
+    },
+    {
+      "id": "NFR004",
+      "category": "Availability",
+      "description": "99.9% uptime",
+      "metric": "Less than 8.76 hours downtime/year"
+    },
+    {
+      "id": "NFR005",
+      "category": "Usability",
+      "description": "Mobile responsive design",
+      "metric": "Works on all devices >320px"
+    },
+    {
+      "id": "NFR006",
+      "category": "Accessibility",
+      "description": "WCAG 2.1 AA compliance",
+      "metric": "Pass accessibility audit"
+    },
+    {
+      "id": "NFR007",
+      "category": "Browser Support",
+      "description": "Support modern browsers",
+      "metric": "Chrome, Firefox, Safari, Edge (last 2 versions)"
+    },
+    {
+      "id": "NFR008",
+      "category": "Data Backup",
+      "description": "Daily automated backups",
+      "metric": "RPO: 24 hours, RTO: 4 hours"
+    }
+  ]
+}

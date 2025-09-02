@@ -1,0 +1,107 @@
+{
+  "architecture": {
+    "type": "Microservices",
+    "pattern": "API Gateway",
+    "deployment": "Containerized with Docker",
+    "hosting": "AWS ECS with CloudFront CDN"
+  },
+  "services": {
+    "api_gateway": {
+      "technology": "Kong Gateway",
+      "responsibilities": ["Rate limiting", "Authentication", "Request routing", "API versioning"],
+      "port": 8000
+    },
+    "user_service": {
+      "technology": "Node.js/Express",
+      "database": "PostgreSQL",
+      "responsibilities": ["User registration", "Authentication", "Profile management"],
+      "port": 3001,
+      "endpoints": [
+        "POST /api/users/register",
+        "POST /api/users/login",
+        "GET /api/users/profile",
+        "PUT /api/users/profile"
+      ]
+    },
+    "product_service": {
+      "technology": "Node.js/Express",
+      "database": "PostgreSQL",
+      "cache": "Redis",
+      "responsibilities": ["Product catalog", "Inventory", "Search"],
+      "port": 3002,
+      "endpoints": [
+        "GET /api/products",
+        "GET /api/products/:id",
+        "GET /api/products/search",
+        "POST /api/products (admin)"
+      ]
+    },
+    "cart_service": {
+      "technology": "Node.js/Express",
+      "storage": "Redis",
+      "responsibilities": ["Cart management", "Session handling"],
+      "port": 3003,
+      "endpoints": [
+        "GET /api/cart",
+        "POST /api/cart/items",
+        "PUT /api/cart/items/:id",
+        "DELETE /api/cart/items/:id"
+      ]
+    },
+    "order_service": {
+      "technology": "Node.js/Express",
+      "database": "PostgreSQL",
+      "queue": "RabbitMQ",
+      "responsibilities": ["Order processing", "Payment integration", "Order tracking"],
+      "port": 3004,
+      "endpoints": [
+        "POST /api/orders",
+        "GET /api/orders/:id",
+        "GET /api/orders/user/:userId",
+        "PUT /api/orders/:id/status"
+      ]
+    },
+    "notification_service": {
+      "technology": "Node.js",
+      "queue": "RabbitMQ",
+      "providers": ["SendGrid", "Twilio"],
+      "responsibilities": ["Email notifications", "SMS alerts"],
+      "port": 3005
+    },
+    "payment_service": {
+      "technology": "Node.js/Express",
+      "integrations": ["Stripe", "PayPal"],
+      "responsibilities": ["Payment processing", "Refunds"],
+      "port": 3006,
+      "security": "PCI DSS compliant"
+    }
+  },
+  "frontend": {
+    "framework": "React 18",
+    "language": "TypeScript",
+    "styling": "TailwindCSS",
+    "state_management": "Redux Toolkit",
+    "routing": "React Router v6",
+    "build_tool": "Vite",
+    "testing": "Jest + React Testing Library"
+  },
+  "infrastructure": {
+    "cdn": "CloudFront",
+    "load_balancer": "AWS ALB",
+    "container_orchestration": "ECS Fargate",
+    "database": "RDS PostgreSQL",
+    "cache": "ElastiCache Redis",
+    "queue": "Amazon MQ (RabbitMQ)",
+    "storage": "S3 for images",
+    "monitoring": "CloudWatch + Prometheus",
+    "ci_cd": "GitHub Actions"
+  },
+  "security": {
+    "authentication": "JWT with refresh tokens",
+    "authorization": "Role-based (RBAC)",
+    "encryption": "TLS 1.3 for transit, AES-256 for storage",
+    "secrets_management": "AWS Secrets Manager",
+    "waf": "AWS WAF",
+    "ddos_protection": "CloudFlare"
+  }
+}
